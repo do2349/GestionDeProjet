@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 public class AddProjectController implements Initializable {
 
@@ -25,7 +26,7 @@ public class AddProjectController implements Initializable {
 		tfDate.setPromptText("JJ/MM/AAAA");
 	}
 	
-	private void submitAProject() {
+	private void saveData() {
 
 		String nomMatiere = tfMatiere.getText();
 		String sujet = tfSujet.getText();
@@ -33,6 +34,11 @@ public class AddProjectController implements Initializable {
 		
 		insertProjet(nomMatiere, sujet, dateRemisePrevue);
 
+	}
+	
+	@FXML 
+	private void submitAProjet(MouseEvent e) {
+		saveData();
 	}
 }
 
